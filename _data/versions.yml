@@ -5,7 +5,7 @@
   url: https://github.com/retrohub-org/retrohub/releases/tag/v0.2.3-beta
   changelog: |
     #### New features
-    - Added an option to specify if RetroHub should store it's downloaded game media separately from configuration (changeable from the first-time wizard).
+    - Added an option to specify if RetroHub should store its downloaded game media separately from configuration (changeable from the first-time wizard).
     - Added UI sounds for the main interface and themes.
 
     #### Bugfixes
