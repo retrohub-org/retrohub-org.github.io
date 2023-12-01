@@ -1,0 +1,28 @@
+# Settings
+exclude:
+  [
+    ".github",
+    "Gemfile",
+    "Gemfile.lock",
+    "build.sh",
+    "build-and-serve.sh",
+    "build-and-watch.sh",
+    "README.md",
+  ]
+permalink: pretty
+
+url: "https://retrohub.github.io"
+
+# Build collection items with a future date.
+future: true
+
+# Plugins
+# plugins:
+  # - jekyll-paginate-v2
+  # - jekyll-redirect-from
+  # - jekyll-multiple-languages-plugin
+
+# Internationalization
+languages: ["en"]
+exclude_from_localizations: ["assets"]
+default_lang: "en"

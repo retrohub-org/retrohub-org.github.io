@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="RetroHub">
+	<meta name="description"
+		content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}Retro-gaming library frontend{% endif %}">
+	<meta name="theme-color" content="#3d8fcc">
+	<meta property="og:site_name" content="RetroHub">
+	<meta property="og:url" content="{{ site.url }}{{ page.url | replace_first: 'index.html', '' }}">
+
+	<meta property="og:title" content="{{ page.title | default: 'RetroHub' }}">
+	<meta property="og:description"
+		content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt }}{% else %}Retro-gaming library frontend{% endif %}">
+	<meta property="og:image" content="{{ site.url }}{{ page.image | default: '/assets/share-image.jpg' }}">
+	<meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+	<meta name="twitter:card" content="summary_large_image">
+	<title>{{ page.title | default: "RetroHub" }}</title>
+
+	<link rel="icon" href="/assets/favicon.png" sizes="any">
+	<link rel="icon" href="/assets/favicon.png" type="image/png">
+	<link rel="stylesheet" href="/assets/css/main.css?110">
+	<link rel="stylesheet" href="/assets/css/tobii.min.css">
+	<link rel="preload" as="font" href="/assets/fonts/Roboto-Regular.ttf" crossorigin>
+	<link rel="preload" as="font" href="/assets/fonts/Roboto-Bold.ttf" crossorigin>
+</head>
+
+<body>
+	{{ content }}
+</body>
+
+</html>

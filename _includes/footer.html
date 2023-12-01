@@ -1,0 +1,53 @@
+</main>
+
+<footer>
+	<div class="container flex footer-container">
+		<div id="copyright">
+			<p>
+				© 2021-{{ site.time | date: '%Y' }} Ricardo Subtil
+			</p>
+		</div>
+		<div id="social" class="dark-desaturate">
+			<div class="flex justify-space-between" style="gap: 3px;">
+				<a href="https://github.com/retrohub-org/retrohub" target="_blank" rel="noopener">
+					<img src="/assets/footer/github.svg" width="32" height="32" alt="GitHub">
+				</a>
+				<a href="https://www.reddit.com/r/RetroHub/" target="_blank" rel="noopener">
+					<!-- Zero-width space in the `alt` text to prevent content blockers from blocking the icon -->
+					<img src="/assets/footer/reddit.svg" width="32" height="32" alt="Red​dit">
+				</a>
+				<a href="https://discord.gg/ZyunJshWG4" target="_blank" rel="noopener">
+					<img src="/assets/footer/discord.svg" width="32" height="32" alt="Discord">
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script defer src="/assets/js/tobii.min.js"></script>
+<script>
+	function setDownload(platform) {
+		const area_download = document.querySelectorAll('.main-download-area');
+		for (let i = 0; i < area_download.length; i++) {
+			const area = area_download[i];
+
+			area.style.display = area.classList.contains(platform) ? 'block' : 'none';
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		// Initialize lightbox.
+		new Tobii({
+			zoom: false,
+		});
+
+		// Update any download link to point to identified user's OS.
+		let platform = 'windows';
+		if (navigator.platform.indexOf('Mac') !== -1) {
+			platform = 'macos';
+		} else if (navigator.platform.indexOf('Linux') !== -1) {
+			platform = 'linux';
+		}
+		setDownload(platform);
+	});
+</script>

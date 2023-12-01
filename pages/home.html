@@ -1,0 +1,417 @@
+---
+permalink: /
+title: "RetroHub - Retro-gaming library frontend"
+description: "RetroHub is a frontend application, allowing you to manage and launch your retro-gaming library. It is designed to be user-friendly and easy to use, yet packed with features and highly customizable."
+layout: default
+---
+
+{% include header.html %}
+
+<link rel="stylesheet" href="/assets/css/transparent-nav.css">
+<style>
+	.background-image {
+		background-image: url(/assets/games_background.png);
+	}
+
+	.hero h2 {
+		color: var(--dark-color-text-title)
+	}
+
+	.main-download {
+		display: flex;
+		align-items: center;
+		gap: 48px;
+		margin-top: 48px;
+	}
+
+	.main-download-info {
+		padding: 25px;
+		min-width: 60%;
+		width: 100%;
+		height: 100%;
+		background-color: var(--download-btn-color);
+	}
+
+	.main-download-info .description {
+		text-align: left;
+	}
+
+	.main-download-links {
+		align-self: flex-start;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		min-width: 30%;
+		width: 100%;
+		background-color: var(--download-btn-color);
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+	}
+
+	.main-download-links:hover {
+		cursor: pointer;
+	}
+
+	.main-download-area {
+		display: none;
+		width: 100%;
+		height: 100%;
+	}
+
+	@media (max-width: 900px) {
+		.main-download {
+			align-items: center;
+			flex-direction: column;
+			gap: 36px;
+		}
+	}
+
+	.feature link {
+		text-decoration: none;
+	}
+
+	.features {
+		text-align: center;
+	}
+
+	.feature {
+		position: relative;
+		overflow: hidden;
+		transition: transform 200ms ease-in-out;
+		height: 100%;
+		border-radius: 8px;
+		margin-bottom: 25px;
+		background-color: var(--transparent-cover-darker);
+	}
+
+	.feature .gradient {
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+	}
+
+	.feature.left {
+		text-align: left;
+	}
+
+	.feature.right {
+		text-align: right;
+	}
+
+	.feature h2 {
+		margin: 0px 25px 10px 25px;
+		width: 65%;
+		padding-top: 32px;
+		position: relative;
+	}
+
+	.feature p {
+		margin: 0px 25px 0px 25px;
+		width: 50%;
+		padding-bottom: 64px;
+		position: relative;
+	}
+
+	.feature.left h2 {
+		float: left;
+	}
+
+	.feature.right h2 {
+		float: right;
+	}
+
+	.feature.left p {
+		text-align: left;
+		float: left;
+	}
+
+	.feature.right p {
+		text-align: right;
+		float: right;
+	}
+
+	.feature.gradient img {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.feature.left.gradient img {
+		mask-image: linear-gradient(-70deg, rgba(0,0,0) 40%,rgb(0, 0, 0, 0.05) 50%);
+		-webkit-mask-image: linear-gradient(-70deg, rgba(0,0,0) 40%,rgb(0, 0, 0, 0.05) 50%);
+	}
+
+	.feature.right.gradient img {
+		mask-image: linear-gradient(70deg, rgba(0,0,0) 40%,rgb(0, 0, 0, 0.05) 50%);
+		-webkit-mask-image: linear-gradient(70deg, rgba(0,0,0) 40%,rgb(0, 0, 0, 0.05) 50%);
+	}
+
+	.feature.logo img {
+		position: absolute;
+		height: 60%;
+	}
+
+	.feature.logo div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.feature.logo.left img {
+		right: 10%;
+		max-width: fit-content;
+	}
+
+	.feature.logo.right img {
+		left: 10%;
+	}
+
+	@media (max-width: 800px) {
+		.feature h2 {
+			margin: 0px 15px 10px 15px;
+			width: initial;
+			padding-top: 32px;
+			padding-bottom: 16px;
+			position: relative;
+			text-align: center;
+			float: none;
+		}
+
+		.feature p {
+			margin-left: 15px;
+			width: initial;
+			padding-bottom: 16px;
+			position: relative;
+			text-align: center;
+			float: none;
+		}
+
+		.feature.left h2 {
+			float: none;
+		}
+
+		.feature.right h2 {
+			float: none;
+		}
+
+		.feature.left p {
+			text-align: center;
+			float: none;
+		}
+
+		.feature.right p {
+			text-align: center;
+			float: none;
+		}
+
+		.feature.gradient img {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			padding-top: 32px;
+		}
+
+		.feature.left.gradient img {
+			mask-image: none;
+		}
+
+		.feature.right.gradient img {
+			mask-image: none;
+		}
+
+		.feature.logo div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			width: 100%;
+		}
+
+		.feature.logo img {
+			position: relative;
+			height: fit-content;
+			width: 50%;
+			padding-top: 32px;
+		}
+
+		.feature.logo.left img {
+			right: 0%;
+			max-width: max-content;
+			height: auto;
+		}
+
+		.feature.logo.right img {
+			left: 0%;
+		}
+	}
+
+	.img-auto-size {
+		width: 100%;
+		height: auto;
+	}
+
+	.btn.btn-flat.btn-hero-learn-more {
+		margin: 0;
+	}
+
+</style>
+
+<section class="hero">
+	<div class="background-image"></div>
+	<div class="wrapper">
+		<div class="copy container text-center">
+			<img src="/assets/icon_text.png" style="width:60%;"/>
+			<h2>Retro-gaming library&nbsp;frontend</h2>
+
+			<div class="main-download" id="main-download">
+				{% assign stable_version = site.data.versions | find: "latest", true %}
+				<div class="main-download-links">
+					<a class="btn btn-platform windows" onclick="setDownload('windows')">
+						<img src="/assets/images/platforms/windows.svg" />
+						<div class="download-title">Windows</div>
+					</a>
+					<a class="btn btn-platform macos" onclick="setDownload('macos')">
+						<img src="/assets/images/platforms/macos.svg" />
+						<div class="download-title">macOS</div>
+					</a>
+					<a class="btn btn-platform linux" onclick="setDownload('linux')">
+						<img src="/assets/images/platforms/linux.svg" />
+						<div class="download-title">Linux</div>
+					</a>
+				</div>
+				<div class="main-download-info">
+					<b>Version {{ stable_version.name }}</b><br>
+					<i>({{ stable_version.release_date }})</i><br><br>
+					<div class="main-download-area windows">
+						<a class="btn btn-download" href="{{ stable_version.releases.win64 }}">Download Windows (64-bits)</a>
+						<a class="btn btn-download" href="{{ stable_version.releases.win32 }}">Download Windows (32-bits)</a>
+					</div>
+					<div class="main-download-area macos">
+						<a class="btn btn-download" href="{{ stable_version.releases.macos }}">Download macOS (universal)</a>
+						<p><i>This universal build works for both Intel and Apple silicon.</i></p>
+					</div>
+					<div class="main-download-area linux">
+						<a class="btn btn-download" href="{{ stable_version.releases.linux64 }}">Download Linux (64-bits)</a>
+						<a class="btn btn-download" href="{{ stable_version.releases.linux32 }}">Download Linux (32-bits)</a>
+					</div>
+					<hr>
+					<div class="description">{{ stable_version.changelog | markdownify }}</div>
+					<b>See full release notes <a href="{{ stable_version.url }}">here</a>.</b>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="screenshots" class="features container padded">
+	<h1>Screenshots</h1>
+	<div class="screenshots">
+		<a class="screenshot lightbox" href="/assets/screenshots/1.png">
+			<img class="screenshot" src="/assets/screenshots/1.png" alt="The default theme, for selecting and launching games while previewing them." />
+		</a>
+		<a class="screenshot lightbox" href="/assets/screenshots/2.png">
+			<img class="screenshot" src="/assets/screenshots/2.png" alt="The default theme's game preview window, showing game information and media." />
+		</a>
+		<a class="screenshot lightbox" href="/assets/screenshots/3.png">
+			<img class="screenshot" src="/assets/screenshots/3.png" alt="Game metadata editor for editing information from the app." />
+		</a>
+		<a class="screenshot lightbox" href="/assets/screenshots/4.png">
+			<img class="screenshot" src="/assets/screenshots/4.png" alt="Automatic scraper for downloading game metadata and media." />
+		</a>
+		<a class="screenshot lightbox" href="/assets/screenshots/5.png">
+			<img class="screenshot" src="/assets/screenshots/5.png" alt="System configuration window for configuring emulators and other system settings." />
+		</a>
+		<a class="screenshot lightbox" href="/assets/screenshots/6.png">
+			<img class="screenshot" src="/assets/screenshots/6.png" alt="Emulator configuration window for configuring emulator settings." />
+		</a>
+</section>
+
+<section id="features" class="features container padded">
+	<h1>Features</h1>
+</section>
+
+<section class="feature left container gradient">
+	<img src="/assets/images/feat-pnp.png" />
+	<h2>Plug-and-play</h2>
+	<p>Got the games? Got the emulators? Then you're all set! With no installation, and after first time setup wizard, you'll be setup in minutes.<br><br>And if you're already using another supported frontend, you can also directly import your settings and games!</p>
+</section>
+
+<section class="feature right container gradient">
+	<img src="/assets/images/feat-emulators.png" />
+	<h2>Support for popular<br>systems and emulators</h2>
+	<p>Comes with built-in support for 80+ systems and 50+ emulators.<br><br>If a system/emulator is not supported, easily add your own settings within the app. No more messing with configuration files!</p>
+</section>
+
+<section class="feature left container logo">
+	<div>
+		<img src="/assets/images/feat-display-input.png" />
+	</div>
+	<h2>For whatever device and setup<br>you have.</h2>
+	<p>The default interface adapts to any screen size and aspect ratio, and the app is fully controllable with keyboard/mouse, controller, or touch input.</p>
+</section>
+
+
+<section class="feature right container gradient">
+	<img src="/assets/images/feat-customize.png" />
+	<h2>Make your setup truly yours.</h2>
+	<p>Customize your game's metadata and media to your liking, with a builtin scraper to automatically fetch the data for you.<br><br>And switch things up with different themes for displaying, organizing and launching your games.</p>
+</section>
+
+<section class="feature left container logo">
+	<div>
+		<img src="/assets/images/dev-opensource.svg" />
+	</div>
+	<h2>Free. As in freedom.</h2>
+	<p>RetroHub is more than free to use: available under the MIT license<span class="asterisk">*</span>, you're free to study, share, improve and modify its source code. No strings attached.<br><br><i><span class="asterisk">*</span> Official builds are under GPL3 due to bundled dependencies. For more information, check <a href="https://retrohub.readthedocs.io/en/latest/app_development/using/licensing.html">here</a>.</i>
+</section>
+
+<section class="features container padded">
+	<h2>Developer? Welcome!</h2>
+
+	<p>RetroHub is more than an emulator frontend: it's a platform to develop themes for, with ultimate freedom on organizing, displaying, and launching the user's library. If you're interested in developing themes for RetroHub, check out <a href="">this documentation section on how to start.</a></p>
+</section>
+
+<section class="feature right container logo">
+	<div>
+		<img src="/assets/images/dev-godot.svg" />
+	</div>
+	<h2>Powered with ❤️ by Godot</h2>
+	<p>Under the hood, RetroHub runs under <a href="https://godotengine.org/">Godot Engine 4</a>. This gives you the ultimate freedom for developing themes, where you can control every aspect of the interface, and even add new features not present on the main&nbsp;app.</p>
+</section>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		// Parallax effect: On page scroll move background-position up.
+		// This effect is disabled if user opted to have reduced motion in browser/OS settings.
+		const reducedMotionCheck = window.matchMedia('(prefers-reduced-motion)');
+		if (!reducedMotionCheck.matches) {
+
+			// Parallax effect lags on mobile, so we disable it based on the window resolution.
+			const parallaxImage = document.querySelector('section.hero .background-image');
+			const parallaxMinWidth = 768;
+			const parallaxSpeed = 0.4;
+
+			const parallaxTick = () => {
+				if (window.innerWidth > parallaxMinWidth) {
+					parallaxImage.style.transform = `translateY(${window.pageYOffset * parallaxSpeed}px)`;
+				} else {
+					parallaxImage.style.transform = 'none';
+				}
+			}
+
+			window.addEventListener("scroll", () => {
+				window.requestAnimationFrame(parallaxTick)
+			});
+
+			window.addEventListener("resize", () => {
+				window.requestAnimationFrame(parallaxTick)
+			});
+		}
+	});
+</script>
+
+{% include footer.html %}
