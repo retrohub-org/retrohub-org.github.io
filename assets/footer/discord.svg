@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="779.625"
+   height="771.79297"
+   viewBox="0 0 23.38875 23.153789"
+   fill="none"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="discord.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch2"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#5a5a5a"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.59"
+     inkscape:cx="449.15254"
+     inkscape:cy="511.86441"
+     inkscape:window-width="1436"
+     inkscape:window-height="466"
+     inkscape:window-x="240"
+     inkscape:window-y="305"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     id="path2"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#2c3e50;stroke-width:0;stroke-linecap:square;stroke-dasharray:none"
+     d="M 11.694375,0 A 11.694359,11.576908 0 0 0 0,11.576895 11.694359,11.576908 0 0 0 11.694375,23.15379 11.694359,11.576908 0 0 0 23.38875,11.576895 11.694359,11.576908 0 0 0 11.694375,0 Z M 9.725566,6.1792383 c 0.124983,0.2205576 0.272015,0.5219764 0.374942,0.7645898 1.051317,-0.1617422 2.117343,-0.1617422 3.190722,0 0.09558,-0.2426134 0.242635,-0.5440322 0.367618,-0.7645898 1.014565,0.1764461 1.977647,0.4852177 2.881933,0.9042773 h 0.01471 c 1.580663,2.3526147 2.359949,5.0067104 2.073223,8.0724614 -1.205715,0.904286 -2.381998,1.44831 -3.53625,1.808555 -0.286725,-0.389653 -0.536708,-0.808717 -0.757266,-1.242481 0.411708,-0.161743 0.816087,-0.352871 1.191035,-0.580781 -0.102926,-0.07352 -0.198502,-0.14706 -0.294082,-0.22793 -2.271742,1.07338 -4.76409,1.07338 -7.0652339,0 -0.095575,0.07352 -0.1910966,0.15441 -0.2940235,0.22793 0.374948,0.22791 0.7719171,0.42639 1.1909766,0.580781 C 8.8433096,16.155815 8.5933265,16.574879 8.3066016,16.964532 7.1523499,16.604287 5.9834185,16.060263 4.7703516,15.155977 4.5277382,12.516638 5.0202977,9.8331345 6.8435742,7.0835156 7.7478605,6.664456 8.7110015,6.3556844 9.725566,6.1792383 Z M 9.3726562,10.685977 c -0.7057843,0 -1.2571875,0.639633 -1.2571875,1.426289 0,0.786655 0.5661069,1.426289 1.2571875,1.426289 0.7057848,0 1.2571878,-0.646986 1.2571878,-1.426289 0.0074,-0.786656 -0.551403,-1.426289 -1.2571878,-1.426289 z m 4.6390428,0 c -0.705784,0 -1.257187,0.639633 -1.257187,1.426289 0,0.786655 0.566107,1.426289 1.257187,1.426289 0.705785,0 1.257188,-0.646986 1.257188,-1.426289 0.0074,-0.786656 -0.551403,-1.426289 -1.257188,-1.426289 z" />
+</svg>
