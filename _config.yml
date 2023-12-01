@@ -11,7 +11,7 @@ exclude:
   ]
 permalink: pretty
 
-url: "https://retrohub.github.io"
+url: "https://retrohub-org.github.io"
 
 # Build collection items with a future date.
 future: true
