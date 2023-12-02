@@ -1093,11 +1093,11 @@ section.hero {
 }
 
 section.hero .background-image {
-  width: 100%;
+  width: 150%;
   height: 100%;
   position: absolute;
   opacity: 0.6;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-blend-mode: darken;
   background-size: cover;
