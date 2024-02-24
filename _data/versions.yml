@@ -1,7 +1,32 @@
+- name: "1.0.1"
+  flavor: "stable"
+  release_date: "24 February 2024"
+  latest: true
+  url: https://github.com/retrohub-org/retrohub/releases/tag/v1.0.1
+  changelog: |
+    #### New features
+    - Added support for RetroAchievements.
+
+    #### Changes
+    - Windowed/fullscreen mode and V-Sync settings are now respected during app initialization.
+    - Increased ScreenScraper request timeout from 10 to 30 seconds.
+
+    #### Bugfixes
+    - Prevent any controller input in the app when an emulator is launched directly from the settings panel.
+    - Fix macOS build which had missing library dependencies which were not being bundled on exporting.
+    - Fix virtual keyboard not properly resizing when the app is launched in fullscreen.
+    - And more...
+  releases:
+    win32: https://github.com/retrohub-org/retrohub/releases/download/v1.0.1/RetroHub-v1.0.1-Windows-32.zip
+    win64: https://github.com/retrohub-org/retrohub/releases/download/v1.0.1/RetroHub-v1.0.1-Windows-64.zip
+    macos: https://github.com/retrohub-org/retrohub/releases/download/v1.0.1/RetroHub-v1.0.1-macOS.zip
+    linux32: https://github.com/retrohub-org/retrohub/releases/download/v1.0.1/RetroHub-v1.0.1-Linux-32.zip
+    linux64: https://github.com/retrohub-org/retrohub/releases/download/v1.0.1/RetroHub-v1.0.1-Linux-64.zip
+
+
 - name: "1.0.0"
   flavor: "stable"
   release_date: "4 December 2023"
-  latest: true
   url: https://github.com/retrohub-org/retrohub/releases/tag/v1.0.0
   changelog: |
     #### New features
